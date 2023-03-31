@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /var/www/html
+php artisan cache:clear
+php artisan config:cache
+
+sudo chmod 777 -R storage/

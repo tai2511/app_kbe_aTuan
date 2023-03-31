@@ -1,0 +1,4 @@
+#!/bin/bash
+yum install -y httpd
+amazon-linux-extras install php7.4 -y
+yum install -y httpd php-cli wget unzip php-mbstring php-xml php-bcmath php-gd php-zip
