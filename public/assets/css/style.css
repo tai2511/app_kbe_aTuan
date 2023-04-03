@@ -1,5 +1,4 @@
-@import "bootstrap.min.css";
-@import "../fonts/fontello-1931a95a/css/fontello.css";
+@import "../fonts/fontello/css/fontello.css";
 
 :root {
     --primary-color: #0A3959;
@@ -109,14 +108,10 @@ body {
     background: linear-gradient(to right, var(--primary-color) 0%, #ffffff 100%);
 }
 
-.feature-style-two .feature-content {
-    padding-left: 70px;
-    padding-top: 45px;
-}
-
 .feature-style-two .feature-content .tag-line {
     color: var(--primary-color);
     font-size: 20px;
+    text-transform: capitalize;
 }
 
 .feature-style-two .feature-content .tag-line:before {
@@ -130,8 +125,6 @@ body {
 }
 
 .feature-style-two .feature-content h3 {
-    font-size: 47px;
-    line-height: 55px;
     font-weight: normal;
     color: #2C3035;
     margin: 0;
@@ -140,9 +133,6 @@ body {
 }
 
 .feature-style-two .feature-content p {
-    color: #808891;
-    font-size: 18px;
-    line-height: 29px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -168,10 +158,6 @@ body {
     height:100%;
     width:100%;
     position:absolute;
-}
-
-.contact-style-one .container {
-    max-width: 970px;
 }
 
 .contact-style-one .contact-info {
@@ -255,4 +241,38 @@ body {
 
 .phone {
     left: 20px;
+}
+
+@media (min-width: 992px){
+
+    .feature-style-two .feature-content {
+        padding-left: 70px;
+        padding-top: 45px;
+    }
+
+    .contact-style-one .container {
+        max-width: 970px;
+    }
+
+    .feature-style-two .feature-content h3 {
+        font-size: 47px;
+        line-height: 55px;
+    }
+}
+
+@media (min-width: 768px) {
+    .second-post {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-header {
+        display: none;
+    }
+
+    #main-nav-bar {
+        margin: 0 auto;
+        flex: 1;
+    }
 }

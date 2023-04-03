@@ -1,0 +1,75 @@
+@import "../../fonts/fontello/css/fontello.css";
+
+:root {
+    --primary-color: #0A3959;
+}
+
+.sub_menu {
+    display: none;
+}
+
+.sidebar {
+    height: 100ch;
+    background-color: #c6c6c69c;
+}
+
+.sidebar .nav-link, .icon-admin  {
+    color: var(--primary-color) !important;
+}
+
+.icon-admin {
+    cursor: pointer;
+}
+
+.content_admin .user-img{
+    background-image: url("https://cdn.pixabay.com/photo/2023/03/25/10/00/bee-7875530_960_720.jpg");
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content_admin .header {
+    flex-direction: row-reverse;
+}
+
+.content_admin header {
+    background-color: var(--primary-color);
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    color: #ffffff;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.icon-fontello {
+    color: var(--primary-color);
+}
+
+.posts {
+    cursor: pointer;
+}
+
+.ql-toolbar {
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 0;
+}
+
+.ql-editor {
+    min-height: 200px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.save_post {
+    background-color: var(--primary-color);
+}
+
+.content-post {
+    border: 1px solid #dee2e6;
+    border-top: none;
+}

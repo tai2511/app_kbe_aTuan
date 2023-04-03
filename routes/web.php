@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('clients.frontend.home');
+Route::get('/', function (){
+    return redirect('/country/spanish');
+})->name('frontend');
+Route::get('/country/{country}', [App\Http\Controllers\Frontend\FrontendController::class, 'getPostData'])->name('front.page');
+
+Route::get('/rebaudo-login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/rebaudo-login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+
+Route::prefix('admin')->middleware('auth')->group(function (){
+    Route::get('/', function (){
+        return redirect(route('post.index'));
+    });
+    Route::resource('post', App\Http\Controllers\Admin\PostsController::class)->except('show');
+    Route::prefix('setting')->group(function (){
+        Route::get('/', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('setting.index');
+        Route::post('/', [App\Http\Controllers\Admin\SettingController::class, 'store'])->name('setting.store');
+    });
 });

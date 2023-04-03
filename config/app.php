@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Rebaudo'),
 
     /*
     |--------------------------------------------------------------------------
@@ -229,4 +229,12 @@ return [
 
     ],
 
+    'countries' => array(
+        1 => 'spanish',
+        2 => 'english',
+        3 => 'russian',
+        4 => 'italian',
+        5 => 'german',
+        6 => 'french',
+    ),
 ];
