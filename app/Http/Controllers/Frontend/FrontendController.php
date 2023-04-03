@@ -16,9 +16,9 @@ class FrontendController extends Controller
         $langId = array_search($country, $countries);
         $data = array();
         $result = $this->getData('setting.first_post', $langId);
-        $data['first_post'] = $result[0];
+        $data['first_post'] = isset($result[0]) ? $result[0] : '';
         $result = $this->getData('setting.second_post', $langId);
-        $data['second_post'] = $result[0];
+        $data['second_post'] = isset($result[0]) ? $result[0] : '';
         $data['country'] = $country;
         return view('clients.frontend.home', compact('data'));
     }
