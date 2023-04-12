@@ -2,6 +2,6 @@
 cd /var/www/html
 php artisan cache:clear
 php artisan config:cache
-php artisan storage:link
 
+sudo php artisan storage:link
 sudo chmod 777 -R storage/
