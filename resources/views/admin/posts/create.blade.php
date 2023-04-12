@@ -65,7 +65,7 @@
             @endforeach
         </div>
         <div class="d-flex">
-            <a href="{{ route('post.index') }}" class="btn save_post text-white mr-md-4 pt-2 pb-2 pr-4 pl-4 ml-auto">
+            <a href="{{ route('post.index') }}" class="btn save_post text-white mr-4 pt-2 pb-2 pr-4 pl-4 ml-auto">
                 Cancel
             </a>
             <button type="submit" class="btn save_post text-white pt-2 pb-2 pr-4 pl-4">Save</button>
