@@ -24,7 +24,7 @@
                         <option {{ $data->second_post == $post->id ? 'selected' : '' }} value="{{ $post->id }}">{{ $post->name }}</option>
                     @endforeach
                 </select>
-                <button type="submit" class="btn save_post text-white pt-2 pb-2 pr-5 pl-5 float-right">Save</button>
+                <button type="submit" class="btn save_post text-white pt-2 pb-2 pr-4 pl-4 float-right">Save</button>
             </form>
         @endif
     </div>

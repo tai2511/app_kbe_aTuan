@@ -65,16 +65,16 @@
                         <input type="hidden" class="country_post" name="{{ $country }}" value="{{ old($country, $data[$country]) }}">
                     </div>
                     <div class="d-flex">
-                        <span data-action="{{ route('preview') }}" class="btn save_post preview text-white pt-2 pb-2 pr-5 pl-5 ml-auto d-flex">Preview</span>
+                        <span data-action="{{ route('preview') }}" class="btn save_post preview text-white pt-2 pb-2 pr-4 pl-4 ml-auto d-flex">Preview</span>
                     </div>
                 </div>
             @endforeach
         </div>
         <div class="d-flex">
-            <a href="{{ route('post.index') }}" class="btn save_post text-white mr-md-4 pt-2 pb-2 pr-5 pl-5 ml-auto">
+            <a href="{{ route('post.index') }}" class="btn save_post text-white mr-md-4 pt-2 pb-2 pr-4 pl-4 ml-auto">
                 Cancel
             </a>
-            <button type="submit" class="btn save_post text-white pt-2 pb-2 pr-5 pl-5">Save</button>
+            <button type="submit" class="btn save_post text-white pt-2 pb-2 pr-4 pl-4">Save</button>
         </div>
         </div>
     </form>
