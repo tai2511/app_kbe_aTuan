@@ -10,7 +10,7 @@
 
 .sidebar {
     height: 100ch;
-    background-color: #c6c6c69c;
+    background-color: #c6c6c6;
 }
 
 .sidebar .nav-link, .icon-admin  {
@@ -22,7 +22,7 @@
 }
 
 .content_admin .user-img{
-    background-image: url("https://cdn.pixabay.com/photo/2023/03/25/10/00/bee-7875530_960_720.jpg");
+    background-color: #ffffff;
     height: 40px;
     width: 40px;
     border-radius: 10px;
@@ -72,4 +72,50 @@
 .content-post {
     border: 1px solid #dee2e6;
     border-top: none;
+}
+
+.toggle-admin-menu {
+    display: none;
+}
+
+.toggle-admin-menu .icon-menu{
+    font-size: 25px;
+}
+
+.table-block {
+    overflow: auto;
+}
+
+.table-block .table {
+    min-width: 500px;
+}
+
+.upload_container {
+    background-color: #8080802e;
+    position: relative;
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 9999;
+        max-width: 200px;
+    }
+
+    .toggle-admin-menu {
+        display: block;
+    }
 }

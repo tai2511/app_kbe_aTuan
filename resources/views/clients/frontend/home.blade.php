@@ -5,12 +5,12 @@
 @section('content')
     <section class="v-header" id="header">
         <div class="fullscreen-video-wrap">
-            <video src="{{  asset("assets/videos/home-3-video.mp4") }}" id="vbg-video" muted  autoplay="autoplay" loop="loop">
+            <video src="{{  asset("assets/videos/home-2-video.mp4") }}" id="vbg-video" muted  autoplay="autoplay" loop="loop">
             </video>
         </div>
     </section>
     <header class="header home-page-three">
-        <nav class="navbar navbar-expand">
+        <nav class="navbar navbar-expand container padding-md-0">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
@@ -22,10 +22,10 @@
                         @php
                             $countries = config('app.countries');
                         @endphp
-                        @foreach($countries as $country)
-                            <li class="nav-item mr-1 ml-1 mr-md-4 ml-md-4 mr-sm-3 ml-sm-3 "  style="flex: 1">
-                                <a class="nav-link" href="{{ route('front.page', $country) }}">
-                                    <img src="{{  asset("assets/img/flag/$country-flag-icon.png") }}">
+                        @foreach($countries as $value)
+                            <li class="nav-item mr-md-4 ml-md-4 mr-sm-3 ml-sm-3 flex-1 {{ $value == $country ? '' : 'main-menu' }}">
+                                <a class="nav-link" href="{{ route('front.page', $value) }}">
+                                    <img src="{{  asset("assets/img/flag/$value-flag-icon.png") }}">
                                 </a>
                             </li>
                         @endforeach
@@ -37,66 +37,28 @@
 
     <section class="feature-style-two">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-12col-xs-12">
-                    <div class="img-box gradient-three">
-                        <div class="inner">
-                            <img src="{{  asset("img/features-2-2.jpg") }}" alt="Awesome Image"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    @if (empty($data['first_post']))
-                        <div class="feature-content">
-                            <div class="tag-line">Default data</div>
-                            <h3>Pieregidio Rebaudo, <br />su abogado de derecho inmobiliario en Mallorca. </h3>
-                            <p>Madre Alemana, padre italiano, título de bachillerato francés, licenciado en derecho y abogado en España. Experiencia plurianual en los contenciosos sobre contratos y sociedades. Desde febrero 2017 trabaja únicamente en el ámbito del derecho inmobiliario y solo en Mallorca, sobre todo en los términos municipales de Calviá y Andratx. Centenares de compras y ventas cerradas con suceso para clientes internacionales. Independiente, competente, fácil de contactar, atento al contexto y consciente de la rapidez necesaria en el ámbito de los negocios. <br /> ue lorem tortor fringilla sed,vestibulum id, eleifend justo  bib <br />-<br /> Abogado del Ilustre Colegio de Abogados de las Islas Baleares (número de colegiado 6476). <br />Oficina con aparcamiento privado en Avenida Jaume I 90, 07180 Santa Ponsa. Se recomienda acordar una cita. </p>
-                            <button class="btn view-more">view more</button>
-                        </div>
-                    @else
-                        <div class="feature-content">
-                            <div class="tag-line">{{ $data['country'] }}</div>
-                            <h3>{{ $data['first_post']->title }}</h3>
-                            {!! $data['first_post']->content !!}
-                            <button class="btn view-more">view more</button>
-                        </div>
-                    @endif
-                </div>
-            </div>
-
-            <div class="row second-post">
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="img-box gradient-three float-right">
-                        <div class="inner">
-                            <img src="{{  asset("img/features-2-2.jpg") }}" alt="Awesome Image"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    @if (empty($data['second_post']))
-                        <div class="feature-content">
-                            <div class="tag-line">Default data</div>
-                            <h3>Pieregidio Rebaudo, <br />su abogado de derecho inmobiliario en Mallorca. </h3>
-                            <p>Madre Alemana, padre italiano, título de bachillerato francés, licenciado en derecho y abogado en España. Experiencia plurianual en los contenciosos sobre contratos y sociedades. Desde febrero 2017 trabaja únicamente en el ámbito del derecho inmobiliario y solo en Mallorca, sobre todo en los términos municipales de Calviá y Andratx. Centenares de compras y ventas cerradas con suceso para clientes internacionales. Independiente, competente, fácil de contactar, atento al contexto y consciente de la rapidez necesaria en el ámbito de los negocios. <br /> ue lorem tortor fringilla sed,vestibulum id, eleifend justo  bib <br />-<br /> Abogado del Ilustre Colegio de Abogados de las Islas Baleares (número de colegiado 6476). <br />Oficina con aparcamiento privado en Avenida Jaume I 90, 07180 Santa Ponsa. Se recomienda acordar una cita. </p>
-                            <button class="btn view-more">view more</button>
-                        </div>
-                    @else
-                        <div class="feature-content">
-                            <div class="tag-line">{{ $data['country'] }}</div>
-                            <h3>{{ $data['second_post']->title }}</h3>
-                            {!! $data['second_post']->content !!}
-                            <button class="btn view-more">view more</button>
-                        </div>
-                    @endif
-                </div>
-            </div>
+            @foreach ($data as $post)
+                @switch($post->layout)
+                    @case ('vertical-1')
+                        <x-vertical-layout-1 :data="$post" :country="$country"/>
+                        @break
+                    @case ('vertical-2')
+                        <x-vertical-layout-2 :data="$post" :country="$country"/>
+                        @break
+                    @case ('horizontal')
+                        <x-horizontal-layout :data="$post" :country="$country" />
+                        @break
+                    @default
+                        <x-vertical-layout-1 :data="$post" :country="$country"/>
+                @endswitch
+            @endforeach
         </div>
     </section>
 
     <!--Google map-->
-    <div id="map-container-google-1" class="mt-5 mb-5 map-container" style="height: 400px">
-        <iframe src="https://maps.google.com/maps?q=hanoi&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                style="border:0" allowfullscreen></iframe>
+    <div id="map-container-google-1" class="map-container">
+        <iframe src="https://maps.google.com/maps?q=Pieregidio+Rebaudo+(Rechtsanwalt)&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0; height: 275px" allowfullscreen></iframe>
     </div>
 
     <!--Google Maps-->
@@ -118,7 +80,7 @@
                         <input type="text" placeholder="Your name" name="name" />
                         <input type="text" placeholder="Your mail address" name="email" />
                         <input type="text" placeholder="Subject" name="subject" />
-                        <textarea name="message" placeholder="Your message"></textarea>
+                        <textarea name="message" placeholder="Your message" style="padding-top: 13px"></textarea>
                         <button class="btn" type="submit">Send message</button>
                     </form>
                 </div>

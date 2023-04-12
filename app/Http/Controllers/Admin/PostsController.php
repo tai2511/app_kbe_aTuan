@@ -46,11 +46,13 @@ class PostsController extends Controller
         $countries = config('app.countries');
         $data = $rule = array();
         $data['post_name'] = $request->post_name;
+        $data['layout'] = $request->layout;
         foreach ($countries as $country) {
             $data[$country] = strip_tags($request->$country);
             $nameTitle = $country . '_title';
             $data[$nameTitle] = $request->$nameTitle;
             $rule['post_name'] = 'required';
+            $rule['layout'] = 'required';
             $rule[$country] = 'required';
             $rule[$nameTitle] = 'required';
         }
@@ -66,6 +68,8 @@ class PostsController extends Controller
         $post_id = DB::table('posts')->insertGetId([
             'name' => $request->post_name,
             'user_id' => $id,
+            'photo' => $request->photo,
+            'layout' => $request->layout,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -99,7 +103,7 @@ class PostsController extends Controller
         $posts = DB::table('post_content')
             ->leftJoin('posts','post_content.post_id', '=', 'posts.id')
             ->where('posts.id', '=', $id)
-            ->select(['posts.id as post_id', 'posts.name as post_name', 'title', 'content', 'lang_id'])
+            ->select(['posts.id as post_id', 'posts.name as post_name', 'title', 'content', 'lang_id', 'photo', 'layout'])
             ->get();
         if (count($posts) == 0) {
             return abort(404);
@@ -107,6 +111,8 @@ class PostsController extends Controller
         $countries = config('app.countries');
         $data = array();
         $data['post_name'] = $posts[0]->post_name;
+        $data['photo'] = $posts[0]->photo;
+        $data['layout'] = $posts[0]->layout;
         $data['post_id'] = $id;
         foreach ($posts as $post) {
             $country = $countries[$post->lang_id];
@@ -148,6 +154,8 @@ class PostsController extends Controller
             ->where('id', $id)
             ->update([
                 'name' => $request->post_name,
+                'photo' => $request->photo,
+                'layout' => $request->layout,
                 'updated_at' => now(),
             ]);
         foreach ($countries as $k => $country) {
@@ -181,5 +189,14 @@ class PostsController extends Controller
             throw new Exception($e->getMessage());
         }
         return redirect(route('post.index'))->with('status', 'Post deleted successfully!');
+    }
+
+    public function preview(Request $request) {
+        $dataList = $request->all();
+        $data = new \stdClass();
+        foreach ($dataList as $k => $v) {
+            $data->$k = $v;
+        }
+        return view('admin.posts.preview', compact('data'));
     }
 }

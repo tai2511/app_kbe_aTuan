@@ -25,6 +25,12 @@ $( document ).ready(function() {
     })
 
     $('.view-more').on('click', function () {
-        $(this).closest('.feature-content').find('p').css('-webkit-line-clamp','unset')
+        let element = $(this).closest('.feature-content').find('.p-content');
+        element.toggleClass('webkit-line-unset');
+        if (element.hasClass('webkit-line-unset')) {
+            $(this).text('view less')
+        } else {
+            $(this).text('view more')
+        }
     })
 });

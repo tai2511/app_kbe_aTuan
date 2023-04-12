@@ -19,13 +19,13 @@ class FrontendController extends Controller
         $data['first_post'] = isset($result[0]) ? $result[0] : '';
         $result = $this->getData('setting.second_post', $langId);
         $data['second_post'] = isset($result[0]) ? $result[0] : '';
-        $data['country'] = $country;
-        return view('clients.frontend.home', compact('data'));
+        return view('clients.frontend.home', compact('data', 'country'));
     }
 
     private function getData($postNumber, $langId){
         return DB::table('post_content')
-            ->select('title', 'content')
+            ->select('title', 'content', 'photo', 'layout')
+            ->leftJoin('posts', 'posts.id', '=', 'post_content.post_id')
             ->whereIn('post_id', function($query) use ($postNumber){
                 $query->select('posts.id')
                     ->from('setting')
@@ -35,4 +35,5 @@ class FrontendController extends Controller
             ->limit(1)
             ->get();
     }
+
 }

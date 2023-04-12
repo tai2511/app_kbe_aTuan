@@ -8,7 +8,7 @@
 @section('sidebar')
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block sidebar">
+            <nav class="col-md-3 col-lg-2 d-none d-md-block sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="navbar-header pb-4">
@@ -38,14 +38,15 @@
                     </ul>
                 </div>
             </nav>
-            <div class="col-md-10 content_admin">
-                <header class="pr-5">
-                    <div class="d-flex align-items-center header">
-                        <i class="pl-4">Rebaudo Hello</i>
-                        <div class="user-img"></div>
+            <div class="col-md-9 col-lg-10 content_admin">
+                <header class="pr-3 pl-3 d-flex align-items-center">
+                    <div class="toggle-admin-menu"><i class="icon-menu"></i></div>
+                    <div class="d-flex align-items-center header ml-auto">
+                        <i class="pl-4">Rebaudo</i>
+                        <div class="user-img" style="background-image: url(' {{  asset("assets/img/logo-icon.png") }}')"></div>
                     </div>
                 </header>
-                <div class="container p-5">
+                <div class="p-md-5 p-2">
                     @yield('content_admin')
                 </div>
             </div>
