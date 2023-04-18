@@ -1,5 +1,5 @@
 <div class="posts-content horizontal-post">
-    <div class="box-gradient"></div>
+{{--    <div class="box-gradient"></div>--}}
     <div class="img-box" style="background-image: url('{{ asset('storage/storage/' . $data->photo) }}')"></div>
     @if (empty($data))
         <div class="feature-content row">

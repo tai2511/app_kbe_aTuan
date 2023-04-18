@@ -4,9 +4,16 @@
 @endsection
 @section('content')
     <section class="v-header" id="header">
-        <div class="fullscreen-video-wrap">
-            <video src="{{  asset("assets/videos/home-2-video.mp4") }}" id="vbg-video" muted  autoplay="autoplay" loop="loop">
-            </video>
+        <div class="fullscreen-video-wrap d-flex justify-content-center align-items-center" style="background: linear-gradient(-120deg, #0A3859 17%, #005373 40%, #4FA0BE 74%, #0A3859 100%);">
+            <div class="text-center">
+                <img style="max-width: 330px" class="img-fluid mb-4" src="{{  asset("assets/img/logo-white-banner.png") }}">
+                <h1 class="stroke-text mb-3">Pieregidio Rebaudo</h1>
+                <p class="text-white">Deutschsprachiger Anwalt für Immobilienrecht<br>
+                Avocat francophone en droit de l’immobilier<br>
+                English-speaking real estate lawyer<br>
+                Avvocato italiano in diritto immobiliare<br>
+                Адвокат по недвижимости"</p>
+            </div>
         </div>
     </section>
     <header class="header home-page-three">

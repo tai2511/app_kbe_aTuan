@@ -45,6 +45,7 @@ body {
     padding: 24px 0 ;
     text-transform: capitalize;
     color: gray;
+    font-weight: bolder;
 }
 
 .active-menu .nav-link {
@@ -111,8 +112,7 @@ body {
 
 .img-box {
     width: 100%;
-    height: calc(100% - 75px);
-    margin-top: -25px;
+    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -273,6 +273,13 @@ body {
     height: 275px;
     margin-top: var(--space);
     margin-bottom: var(--space);
+}
+
+.stroke-text {
+    -webkit-text-stroke-width: 0.5px;
+    font-weight: bolder;
+    color: transparent;
+    -webkit-text-stroke-color: #ffffff;
 }
 
 @media only screen and (min-width: 992px){

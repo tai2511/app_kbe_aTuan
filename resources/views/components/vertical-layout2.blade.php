@@ -21,7 +21,7 @@
         @endif
     </div>
     <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="box-gradient"></div>
+{{--        <div class="box-gradient"></div>--}}
         <div class="img-box" style="background-image: url('{{ asset('storage/storage/' . $data->photo) }}')"></div>
     </div>
 </div>
