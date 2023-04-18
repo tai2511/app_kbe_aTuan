@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (){
-    return redirect('/country/spanish');
+    return redirect('/deutsch');
 })->name('frontend');
-Route::get('/country/{country}', [App\Http\Controllers\Frontend\FrontendController::class, 'getPostData'])->name('front.page');
 
 Route::get('/rebaudo-login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/rebaudo-login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
@@ -34,5 +33,6 @@ Route::prefix('admin')->middleware('auth')->group(function (){
     });
     Route::post('/upload-image', [App\Http\Controllers\Admin\FileHandlerController::class, 'upload'])->name('upload.file');
 });
+Route::get('/{country}', [App\Http\Controllers\Frontend\FrontendController::class, 'getPostData'])->name('front.page');
 
 //Auth::routes();

@@ -10,22 +10,26 @@
         </div>
     </section>
     <header class="header home-page-three">
-        <nav class="navbar navbar-expand container padding-md-0">
+        <nav class="navbar navbar-expand-md navbar-light container">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="{{  asset("assets/img/logo-1-1.png") }}" alt="Awesome Image" class="default-logo" />
+                        <img src="{{  asset("assets/img/logo-1-1.png") }}" width="121px" alt="Awesome Image" class="default-logo" />
                     </a>
                 </div>
-                <div id="main-nav-bar">
-                    <ul class="nav navbar-nav ml-auto mt-2 mt-lg-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav-bar" aria-controls="main-nav-bar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav-bar">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         @php
                             $countries = config('app.countries');
                         @endphp
                         @foreach($countries as $value)
-                            <li class="nav-item mr-md-4 ml-md-4 mr-sm-3 ml-sm-3 flex-1 {{ $value == $country ? '' : 'main-menu' }}">
+                            <li class="nav-item mr-md-3 ml-md-3 {{ $value == $country ? 'active-menu' : '' }} ">
                                 <a class="nav-link" href="{{ route('front.page', $value) }}">
-                                    <img src="{{  asset("assets/img/flag/$value-flag-icon.png") }}">
+{{--                                    <img src="{{  asset("assets/img/flag/$value-flag-icon.png") }}">--}}
+                                    {{ $value }}
                                 </a>
                             </li>
                         @endforeach
@@ -72,7 +76,6 @@
                         <div class="contact-info">
                             <p><span>Email:</span> rebaudo@icaib.org <br /> <span>Phone:</span> (+34) 645 43 5331 </p>
                         </div>
-                        <p>Having trouble? Find the answer to your query <br /> here. Don’t hasitate to contact us!</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -94,6 +97,7 @@
     </footer>
 
     @section('js')
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
         <script src="{{  asset("assets/js/script.js") }}"></script>
     @endsection
 @endsection

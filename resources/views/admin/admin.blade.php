@@ -13,7 +13,7 @@
                     <ul class="nav flex-column">
                         <li class="navbar-header pb-4">
                             <a class="nav-link" href="{{ route('frontend') }}">
-                                <img src="{{  asset("assets/img/logo-1-1.png") }}" alt="Awesome Image" class="default-logo">
+                                <img src="{{  asset("assets/img/logo-1-1.png") }}" width="121px" alt="Awesome Image" class="default-logo">
                             </a>
                         </li>
                         <li class="nav-item">

@@ -17,8 +17,8 @@ class FrontendController extends Controller
         $data = array();
         $result = $this->getData('setting.first_post', $langId);
         $data['first_post'] = isset($result[0]) ? $result[0] : '';
-        $result = $this->getData('setting.second_post', $langId);
-        $data['second_post'] = isset($result[0]) ? $result[0] : '';
+//        $result = $this->getData('setting.second_post', $langId);
+//        $data['second_post'] = isset($result[0]) ? $result[0] : '';
         return view('clients.frontend.home', compact('data', 'country'));
     }
 

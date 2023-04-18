@@ -230,11 +230,12 @@ return [
     ],
 
     'countries' => array(
-        1 => 'spanish',
-        2 => 'english',
-        3 => 'russian',
-        4 => 'italian',
-        5 => 'german',
-        6 => 'french',
+        1 => 'deutsch',
+        2 => 'français',
+        3 => 'english',
+        4 => 'pусский',
+        5 => 'italiano',
+        6 => 'español',
     ),
+//    'Deutsch Français English Русский Italiano Español'
 ];
