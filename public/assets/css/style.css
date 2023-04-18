@@ -158,21 +158,6 @@ body {
     margin-bottom: 30px;
 }
 
-.feature-style-two .feature-content .p-content {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    margin-bottom: 50px;
-}
-
-.view-more {
-    padding: 13px 60px;
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
 .map-container{
     overflow:hidden;
     position:relative;
@@ -298,10 +283,6 @@ body {
 
     .posts-content .col-md-6:first-child {
         padding-right: 50px !important;
-    }
-
-    .posts-content .col-md-6:last-child {
-        padding-left: 50px !important;
     }
 
 }
