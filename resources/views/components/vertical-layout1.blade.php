@@ -1,9 +1,8 @@
 <div class="row posts-content">
-    <div class="col-md-6 col-sm-12 col-xs-12">
-{{--        <div class="box-gradient"></div>--}}
+    <div class="col-lg-6 col-sm-12 col-xs-12">
         <div class="img-box" style="background-image: url('{{ asset('storage/storage/' . $data->photo) }}')"></div>
     </div>
-    <div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="col-lg-6 col-sm-12 col-xs-12">
         @if (empty($data))
             <div class="feature-content">
                 <div class="tag-line">Default data</div>
@@ -14,7 +13,10 @@
             </div>
         @else
             <div class="feature-content">
-                <div class="tag-line">{{ $country }}</div>
+                <div class="small-img">
+                    <div class="box mr-5" style="background-image: url('{{ asset('assets/img/photo2.jpg') }}')"></div>
+                    <div class="box" style="background-image: url('{{ asset('assets/img/photo1.jpg') }}')"></div>
+                </div>
                 <h3>{{ $data->title }}</h3>
                 <div class="p-content">
                     {!! $data->content !!}

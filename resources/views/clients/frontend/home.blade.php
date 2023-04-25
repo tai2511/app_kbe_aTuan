@@ -4,24 +4,54 @@
 @endsection
 @section('content')
     <section class="v-header" id="header">
-        <div class="fullscreen-video-wrap d-flex justify-content-center align-items-center" style="background: linear-gradient(-120deg, #0A3859 17%, #005373 40%, #4FA0BE 74%, #0A3859 100%);">
-            <div class="text-center">
-                <img style="max-width: 330px" class="img-fluid mb-4" src="{{  asset("assets/img/logo-white-banner.png") }}">
-                <h1 class="stroke-text mb-3">Pieregidio Rebaudo</h1>
-                <p class="text-white">Deutschsprachiger Anwalt für Immobilienrecht<br>
-                Avocat francophone en droit de l’immobilier<br>
-                English-speaking real estate lawyer<br>
-                Avvocato italiano in diritto immobiliare<br>
-                Адвокат по недвижимости"</p>
+        <div class="fullscreen-video-wrap d-flex justify-content-center align-items-center">
+            <video src="{{  asset("assets/videos/video-home.mp4") }}" id="vbg-video" muted  autoplay="autoplay" loop="loop">
+            </video>
+            <div class="container text-center content">
+                <div class="d-inline-block has-animation animation-ltr" data-delay="10">
+                    <img style="width: 400px" class="img-fluid mb-4" src="{{  asset("assets/img/logo-banner.png") }}">
+                </div>
+                <br>
+                <div class="d-inline-block has-animation animation-rtl" data-delay="1000">
+                    <h1 class="stroke-text mb-3">Pieregidio Rebaudo</h1>
+                </div>
+                <br>
+                <div class="d-inline-block has-animation animation-ltr" data-delay="1500" style="margin-bottom: 60px">
+                    <p class="color-primary">Deutschsprachiger Anwalt für Immobilienrecht<br>
+                        Avocat francophone en droit de l’immobilier<br>
+                        English-speaking real estate lawyer<br>
+                        Avvocato italiano in diritto immobiliare<br>
+                        Адвокат по недвижимости"</p>
+                </div>
+                <div class="row text-white info-header">
+                    <span class="col-md-4">Address. Avenida Jaume I 90, local 6, 07180 Santa Ponsa - Calviá</span>
+                    <span class="col-md-4">Email. rebaudo@icaib.org</span>
+                    <span class="col-md-4">Phone. (+34) 645 43 5331</span>
+                </div>
             </div>
         </div>
+        <div class="text-center country-block">
+            <span class="country-header">{{ $country }}</span>
+        </div>
+
     </section>
+{{--    <div class="has-animation animation-rtl" data-delay="2000">--}}
+{{--        <img src="https://images.prismic.io/figaroimmo/943be1d1-6e3a-4c59-a5f1-97ce8b6ea147_lyon-confinement.jpg?auto=compress,format&rect=0,0,1000,667&w=720&h=480" width="600" />--}}
+{{--    </div>--}}
+
+{{--    <br>--}}
+
+{{--    <div class="has-animation animation-ltr" data-delay="4000">--}}
+{{--        <p class="bigger">END ☺</p>--}}
+{{--    </div>--}}
+
+
     <header class="header home-page-three">
-        <nav class="navbar navbar-expand-md navbar-light container">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <div class="container padding-menu">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="{{  asset("assets/img/logo-1-1.png") }}" width="121px" alt="Awesome Image" class="default-logo" />
+                        <img src="{{  asset("assets/img/Rebaudo-03.png") }}" width="121px" alt="Awesome Image" class="default-logo" />
                     </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav-bar" aria-controls="main-nav-bar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +63,7 @@
                             $countries = config('app.countries');
                         @endphp
                         @foreach($countries as $value)
-                            <li class="nav-item mr-md-3 ml-md-3 {{ $value == $country ? 'active-menu' : '' }} ">
+                            <li class="position-relative nav-item {{ $value == $country ? 'active-menu' : '' }} ">
                                 <a class="nav-link" href="{{ route('front.page', $value) }}">
 {{--                                    <img src="{{  asset("assets/img/flag/$value-flag-icon.png") }}">--}}
                                     {{ $value }}
@@ -74,29 +104,13 @@
 
     <!--Google Maps-->
 
-    <section class="contact-style-one" >
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="contact-content">
-                        <h3>Pieregidio Rebaudo<br /> Avenida Jaume I 90, local 6, 07180 Santa Ponsa - Calviá</h3>
-                        <div class="contact-info">
-                            <p><span>Email:</span> rebaudo@icaib.org <br /> <span>Phone:</span> (+34) 645 43 5331 </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <form class="contact-form">
-                        <input type="text" placeholder="Your name" name="name" />
-                        <input type="text" placeholder="Your mail address" name="email" />
-                        <input type="text" placeholder="Subject" name="subject" />
-                        <textarea name="message" placeholder="Your message" style="padding-top: 13px"></textarea>
-                        <button class="btn" type="submit">Send message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="d-flex justify-content-center footer">
+        <span class="vertical-footer"></span>
+        <span class="vertical-footer"></span>
+        <span class="vertical-footer"></span>
+        <span class="vertical-footer"></span>
+        <span class="vertical-footer"></span>
+    </div>
 
     <footer>
         <a class="phone icon-fixed text-white" href="tel:0123456789"><i class="icon-phone"></i></a>
