@@ -14,8 +14,12 @@
         @else
             <div class="feature-content">
                 <div class="small-img">
-                    <div class="box mr-5" style="background-image: url('{{ asset('assets/img/photo2.jpg') }}')"></div>
-                    <div class="box" style="background-image: url('{{ asset('assets/img/photo1.jpg') }}')"></div>
+                    <img loop=infinite class="mr-4" width="100px" height="100px" src="{{ asset('assets/img/gif/trial.gif') }}" />
+                    <img class="mr-4" width="100px" height="100px" src="{{ asset('assets/img/gif/handshake.gif') }}" />
+                    <img width="100px" height="100px" src="{{ asset('assets/img/gif/building.gif') }}" />
+
+{{--                    <div class="box mr-5" style="background-image: url('{{ asset('assets/img/gif/trial.gif') }}')"></div>--}}
+{{--                    <div class="box" style="background-image: url('{{ asset('assets/img/photo1.jpg') }}')"></div>--}}
                 </div>
                 <h3>{{ $data->title }}</h3>
                 <div class="p-content">
