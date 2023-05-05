@@ -77,7 +77,7 @@ body {
 
 #main-nav-bar .nav-link {
     text-transform: capitalize;
-    color: #ffffff;
+    color: #ffffff !important;
     font-weight: bolder;
 }
 
