@@ -21,7 +21,7 @@
 {{--                    <div class="box mr-5" style="background-image: url('{{ asset('assets/img/gif/trial.gif') }}')"></div>--}}
 {{--                    <div class="box" style="background-image: url('{{ asset('assets/img/photo1.jpg') }}')"></div>--}}
                 </div>
-                <h3>{{ $data->title }}</h3>
+                <h3 style="margin-bottom: 70px">{{ $data->title }}</h3>
                 <div class="p-content">
                     {!! $data->content !!}
                 </div>
