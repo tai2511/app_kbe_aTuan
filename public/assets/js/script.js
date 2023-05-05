@@ -40,11 +40,4 @@ $( document ).ready(function() {
             $(this).text('view more')
         }
     })
-
-    var resetAnimation = function resetAnimation() {
-        var twoTimesGif = document.getElementById("twoTimesGif");
-        twoTimesGif.src = twoTimesGif.src;
-    };
-    var resetButton = document.getElementById("resetButton");
-    resetButton.addEventListener("click", resetAnimation);
 });

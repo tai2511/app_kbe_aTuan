@@ -14,7 +14,7 @@
         @else
             <div class="feature-content">
                 <div class="small-img">
-                    <img loop=infinite class="mr-4" width="100px" height="100px" src="{{ asset('assets/img/gif/trial.gif') }}" />
+                    <img class="mr-4" width="100px" height="100px" src="{{ asset('assets/img/gif/trial.gif') }}" />
                     <img class="mr-4" width="100px" height="100px" src="{{ asset('assets/img/gif/handshake.gif') }}" />
                     <img width="100px" height="100px" src="{{ asset('assets/img/gif/building.gif') }}" />
 
