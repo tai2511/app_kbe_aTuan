@@ -5,7 +5,7 @@
 @section('content')
     <section class="v-header" id="header">
         <div class="fullscreen-video-wrap d-flex justify-content-center align-items-center">
-            <video src="{{  asset("assets/videos/video-home.mp4") }}" id="vbg-video" muted  autoplay="autoplay" loop="loop">
+            <video src="{{  asset("assets/videos/video-home2.mp4") }}" id="vbg-video" muted  autoplay="autoplay" loop="loop">
             </video>
             <div class="container text-center content">
                 <div class="d-inline-block" data-delay="10">
@@ -30,10 +30,10 @@
 {{--                    <span class="col-md-4">Phone. (+34) 645 43 5331</span>--}}
 {{--                </div>--}}
                 <div class="font-weight-bold d-inline-block" data-delay="2000">
-                    <p class="color-primary">Abogado del Ilustre Colegio de Abogados de las Islas Baleares (número de colegiado 6476)
+                    <p class="color-primary">Abogado del Ilustre Colegio de Abogados de las Islas Baleares <br>(número de colegiado 6476)
                     <br><br>
                         <a target="_blank" href="https://www.google.com/maps/place/39%C2%B030'49.7%22N+2%C2%B028'52.0%22E/@39.5144949,2.4807576,16.06z/data=!4m4!3m3!8m2!3d39.5138056!4d2.4811111">Avenida Jaume I 90, local 6, 07180 Santa Ponsa - Calviá</a><br>
-                    rebaudo@icaib.org     +34 645 43 5331
+                    rebaudo@icaib.org &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp+34 645 43 5331
                 </div>
             </div>
         </div>
