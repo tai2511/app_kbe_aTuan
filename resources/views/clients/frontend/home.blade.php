@@ -8,15 +8,15 @@
             <video src="{{  asset("assets/videos/video-home.mp4") }}" id="vbg-video" muted  autoplay="autoplay" loop="loop">
             </video>
             <div class="container text-center content">
-                <div class="d-inline-block has-animation animation-ltr" data-delay="10">
+                <div class="d-inline-block" data-delay="10">
                     <img style="width: 400px" class="img-fluid mb-4" src="{{  asset("assets/img/3dcard1.png") }}">
                 </div>
                 <br>
-                <div class="d-inline-block has-animation animation-rtl" data-delay="1000">
+                <div class="d-inline-block" data-delay="1000">
                     <h1 class="stroke-text mb-3">Pieregidio Rebaudo</h1>
                 </div>
                 <br>
-                <div class="d-inline-block has-animation animation-ltr font-weight-bold" data-delay="1500" style="margin-bottom: 20px">
+                <div class="d-inline-block font-weight-bold" data-delay="1500" style="margin-bottom: 20px">
                     <p class="color-primary">Deutschsprachiger Anwalt für Immobilienrecht<br>
                         Avocat francophone en droit de l’immobilier<br>
                         English-speaking real estate lawyer<br>
@@ -29,7 +29,7 @@
 {{--                    <span class="col-md-4">Email. rebaudo@icaib.org</span>--}}
 {{--                    <span class="col-md-4">Phone. (+34) 645 43 5331</span>--}}
 {{--                </div>--}}
-                <div class="font-weight-bold d-inline-block has-animation animation-rtl" data-delay="2000">
+                <div class="font-weight-bold d-inline-block" data-delay="2000">
                     <p class="color-primary">Abogado del Ilustre Colegio de Abogados de las Islas Baleares (número de colegiado 6476)
                     <br><br>
                         <a target="_blank" href="https://www.google.com/maps/place/39%C2%B030'49.7%22N+2%C2%B028'52.0%22E/@39.5144949,2.4807576,16.06z/data=!4m4!3m3!8m2!3d39.5138056!4d2.4811111">Avenida Jaume I 90, local 6, 07180 Santa Ponsa - Calviá</a><br>
