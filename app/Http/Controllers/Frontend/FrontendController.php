@@ -22,6 +22,7 @@ class FrontendController extends Controller
     // feature 1
         // feature2
         // new feature
+        // feature3
         // 'countries' => array(
         //        1 => 'deutsch',
         //        2 => 'français',
