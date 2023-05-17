@@ -85,21 +85,24 @@
 
     <section class="feature-style-two">
         <div class="container">
-            @foreach ($data as $post)
-                @switch($post->layout)
-                    @case ('vertical-1')
-                        <x-vertical-layout-1 :data="$post" :country="$country"/>
-                        @break
-                    @case ('vertical-2')
-                        <x-vertical-layout-2 :data="$post" :country="$country"/>
-                        @break
-                    @case ('horizontal')
-                        <x-horizontal-layout :data="$post" :country="$country" />
-                        @break
-                    @default
-                        <x-vertical-layout-1 :data="$post" :country="$country"/>
-                @endswitch
-            @endforeach
+            <div class="row posts-content">
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <div class="img-box" style="background-image: url('{{ asset('assets/img/post_avt.jpg') }}')"></div>
+                </div>
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <div class="feature-content">
+                        <div class="small-img">
+                            <img class="mr-4" width="100px" height="100px" src="{{ asset('assets/img/gif/trial.gif') }}" />
+                            <img class="mr-4" width="100px" height="100px" src="{{ asset('assets/img/gif/handshake.gif') }}" />
+                            <img width="100px" height="100px" src="{{ asset('assets/img/gif/building.gif') }}" />
+                        </div>
+                        <h3 style="margin-bottom: 70px">{{ $data[0] }}</h3>
+                        <div class="p-content">
+                            {!! $data[1] !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
