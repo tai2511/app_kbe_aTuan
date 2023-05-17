@@ -21,6 +21,7 @@ class FrontendController extends Controller
     private function getData($langId){
     // feature 1
         // feature2
+        // new feature
         // 'countries' => array(
         //        1 => 'deutsch',
         //        2 => 'français',
