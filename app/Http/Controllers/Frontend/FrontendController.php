@@ -19,6 +19,7 @@ class FrontendController extends Controller
     }
 
     private function getData($langId){
+        // feature2
         // 'countries' => array(
         //        1 => 'deutsch',
         //        2 => 'français',
